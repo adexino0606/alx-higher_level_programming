@@ -1,0 +1,91 @@
+# doctest_4-print_square.txt
+===============================
+Tests to 4-print_square.txt
+===============================
+
+This library is for sum two numbers (only int and float) and the function is called
+``print_square(size)``.
+
+File ``4-print_square.py``
+
+Return: None
+
+Importing the function:
+
+	  >>> print_square = __import__('4-print_square').print_square
+
+Test to realize:
+
+     >>> print_square(4)
+     ####
+     ####
+     ####
+     ####
+
+     >>> print_square(10)
+     ##########
+     ##########
+     ##########
+     ##########
+     ##########
+     ##########
+     ##########
+     ##########
+     ##########
+     ##########
+
+     >>> print_square(0)
+
+     >>> print_square(1)
+     #
+
+     >>> print_square(False)
+
+
+     >>> print_square(0x5)
+     #####
+     #####
+     #####
+     #####
+     #####
+
+     >>> print_square(0x2)
+     ##
+     ##
+
+     >>> print_square(0b11)
+     ###
+     ###
+     ###
+
+     >>> print_square(0b0)
+
+     >>> print_square(-1)
+     Traceback (most recent call last):
+	  ...
+     ValueError: size must be >= 0
+
+     >>> print_square('Diego')
+     Traceback (most recent call last):
+	  ...
+     TypeError: size must be an integer
+
+     >>> print_square([])
+     Traceback (most recent call last):
+	  ...
+     TypeError: size must be an integer
+
+     >>> print_square({})
+     Traceback (most recent call last):
+	  ...
+     TypeError: size must be an integer
+
+     >>> print_square(())
+     Traceback (most recent call last):
+	  ...
+     TypeError: size must be an integer
+
+     >>> print_square(None)
+     Traceback (most recent call last):
+	  ...
+     TypeError: size must be an integer

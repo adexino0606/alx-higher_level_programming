@@ -1,0 +1,79 @@
+# doctest_0-add_integer.txt
+===============================
+Tests to 0-add_integer.py
+===============================
+
+This library is for sum two numbers (only int and float) and the function is called
+``add_integer(a, b=98)``.
+
+File ``0-add_integer.py``
+
+Return an integer: The sum of a and b numbers
+
+Importing the function:
+
+	  >>> add_integer = __import__('0-add_integer').add_integer
+
+Test to realize:
+
+     >>> add_integer(4, 8)
+     12
+
+     >>> add_integer(4, -8)
+     -4
+
+     >>> add_integer(-4, 8)
+     4
+
+     >>> add_integer(-3.5, 1)
+     -2
+
+     >>> add_integer(-4, 8)
+     4
+
+     >>> add_integer(-4, -8)
+     -12
+
+     >>> add_integer(4)
+     102
+
+     >>> add_integer(-8)
+     90
+
+     >>> add_integer()
+     Traceback (most recent call last):
+     	       ...
+     TypeError: add_integer() missing 1 required positional argument: 'a'
+
+     >>> add_integer([5, 8, 9], 5)
+     Traceback (most recent call last):
+     	       ...
+     TypeError: a must be an integer
+
+     >>> add_integer(5, [5, 8, 9])
+     Traceback (most recent call last):
+     	       ...
+     TypeError: b must be an integer
+
+     >>> add_integer([5, 8, 9], -5)
+     Traceback (most recent call last):
+     	       ...
+     TypeError: a must be an integer
+
+     >>> add_integer(-5, [5, 8, 9])
+     Traceback (most recent call last):
+     	       ...
+     TypeError: b must be an integer
+
+     >>> add_integer(5.6, 1.4)
+     6
+
+     >>> add_integer(319e520)
+     Traceback (most recent call last):
+     	       ...
+     OverflowError: cannot convert float infinity to integer
+
+     >>> add_integer(float('nan'))
+     Traceback (most recent call last):
+     	       ...
+     ValueError: cannot convert float NaN to integer
