@@ -1,12 +1,20 @@
 #!/usr/bin/node
-const { get } = require('axios').default;
-const id = process.argv[2];
-const baseUrl = `https://swapi-api.hbtn.io/api/films/${id}`;
+const request = require('request');
+const url = 'https://swapi.co/api/films/' + process.argv[2];
+request(url, function (error, response, body) {
+  if (!error) {
+    let characters = JSON.parse(body).characters;
+    printCharacters(characters, 0);
+  }
+});
 
-get(baseUrl)
-  .then(({ data: { characters } }) => {
-    const requests = characters.map(character => get(character));
-    Promise.all(requests)
-      .then((data) => data.forEach(({ data: { name } }) => console.log(name)));
-  })
-  .catch((err) => console.error(err));
+function printCharacters (characters, index) {
+  request(characters[index], function (error, response, body) {
+    if (!error) {
+      console.log(JSON.parse(body).name);
+      if (index + 1 < characters.length) {
+        printCharacters(characters, index + 1);
+      }
+    }
+  });
+}
